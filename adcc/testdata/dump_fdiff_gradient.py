@@ -66,8 +66,7 @@ def _molstring(elems, coords):
 
 def adc_energy(scfres, method, **kwargs):
     state = adcc.run_adc(method=method, data_or_matrix=scfres,
-                         output=None,
-                         **kwargs)
+                          output=None, **kwargs)
     return state.total_energy
 
 
