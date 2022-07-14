@@ -50,10 +50,10 @@ class GradientComponents:
     def total(self):
         """Returns the total gradient"""
         ret = sum([self.nuc, self.overlap, self.hcore, self.two_electron])
-        if self.custom is None:
+        if self.custom:
+            return ret + sum(self.custom.values())
+        else:
             return ret
-        for c in self.custom:
-            ret += self.custom[c]
 
     @property
     def one_electron(self):
